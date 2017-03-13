@@ -1,71 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!--<link rel="icon" href="../../favicon.ico">-->
+{% extends 'gis/base.html' %}
 
-    <title>Starter Template for Bootstrap</title>
+{% block title %}
+    Home
+{% endblock %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-    <!-- Custom styles for this template -->
-   <!-- <link href="starter-template.css" rel="stylesheet">-->
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
-    <div class="container">
-
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  </body>
-</html>
+{% block content %}
+    {% for article in articles %}
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.text | safe}}</p>>
+{% endblock %}
+    <!--<h1>Home</h1>
+    <p>
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium cupiditate dolores est exercitationem expedita ipsa libero maiores, nam neque officiis porro provident repellat rerum saepe tenetur ullam ut vero.</span><span>Ab aliquid commodi delectus deleniti dolor doloribus dolorum, ducimus fugit id ipsum magnam minima minus mollitia nam nesciunt nobis obcaecati, porro quas quo quos recusandae repudiandae sequi vel veritatis vero.</span><span>Amet animi architecto commodi, dolorem, eius eligendi exercitationem facere fugit id iste, magni nobis nulla officia rem sed sequi unde? Aliquid amet id maiores molestias nulla ratione ullam vel voluptate.</span><span>Ad beatae, corporis culpa delectus dicta et quisquam unde voluptates. Amet beatae blanditiis deserunt distinctio, doloremque eius labore laborum libero molestiae praesentium reprehenderit sint sunt ullam unde ut voluptates voluptatum.</span><span>Cum doloribus ex nihil omnis placeat qui reprehenderit soluta? Aliquid at consectetur delectus deserunt doloremque earum eius eos exercitationem facere fuga hic in ipsum labore laboriosam qui, recusandae, vel vero!</span><span>Consectetur eligendi, itaque maxime nesciunt nulla quaerat recusandae tenetur voluptatem! Ad aperiam delectus ea impedit incidunt inventore ipsum iste maiores minima nesciunt, nulla numquam odio odit officiis quo veritatis voluptate?</span><span>Consectetur enim explicabo ipsam minus numquam sequi sit velit. Aliquid autem dolorum recusandae ullam? Adipisci aspernatur assumenda dolorum, eligendi, facilis harum labore natus officia quasi repellendus soluta tenetur ullam, vero.</span><span>Accusamus commodi cupiditate earum et harum, id illo incidunt iusto, labore laboriosam nihil nulla omnis placeat quae quibusdam quis quo quod ratione repellat similique sit, soluta tempora veritatis vero voluptatem.</span><span>Alias aliquid asperiores assumenda beatae blanditiis commodi cumque distinctio dolorem ea eum expedita illum iure necessitatibus neque nesciunt nisi non perspiciatis possimus, quidem quisquam quo sit ut, vel, vitae voluptatum.</span><span>Architecto blanditiis expedita iusto laboriosam, laudantium omnis porro ratione velit. Ab aliquid, assumenda doloribus dolorum esse iure laboriosam magnam maxime minima, molestiae necessitatibus nobis odio possimus, praesentium qui quia soluta!
+        </span>
+    </p>-->
