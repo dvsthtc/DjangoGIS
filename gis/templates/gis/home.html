@@ -1,17 +1,10 @@
 {% extends 'gis/base.html' %}
-
 {% block title %}
     Home
 {% endblock %}
-
 {% block content %}
     {% for article in articles %}
         <h3><a href="{% url 'article' article.id  %}">{{ article.title }}</a></h3>
         <p>{{ article.get_short_text | safe}}</p>
     {% endfor %}
 {% endblock %}
-    <!--<h1>Home</h1>
-    <p>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium cupiditate dolores est exercitationem expedita ipsa libero maiores, nam neque officiis porro provident repellat rerum saepe tenetur ullam ut vero.</span><span>Ab aliquid commodi delectus deleniti dolor doloribus dolorum, ducimus fugit id ipsum magnam minima minus mollitia nam nesciunt nobis obcaecati, porro quas quo quos recusandae repudiandae sequi vel veritatis vero.</span><span>Amet animi architecto commodi, dolorem, eius eligendi exercitationem facere fugit id iste, magni nobis nulla officia rem sed sequi unde? Aliquid amet id maiores molestias nulla ratione ullam vel voluptate.</span><span>Ad beatae, corporis culpa delectus dicta et quisquam unde voluptates. Amet beatae blanditiis deserunt distinctio, doloremque eius labore laborum libero molestiae praesentium reprehenderit sint sunt ullam unde ut voluptates voluptatum.</span><span>Cum doloribus ex nihil omnis placeat qui reprehenderit soluta? Aliquid at consectetur delectus deserunt doloremque earum eius eos exercitationem facere fuga hic in ipsum labore laboriosam qui, recusandae, vel vero!</span><span>Consectetur eligendi, itaque maxime nesciunt nulla quaerat recusandae tenetur voluptatem! Ad aperiam delectus ea impedit incidunt inventore ipsum iste maiores minima nesciunt, nulla numquam odio odit officiis quo veritatis voluptate?</span><span>Consectetur enim explicabo ipsam minus numquam sequi sit velit. Aliquid autem dolorum recusandae ullam? Adipisci aspernatur assumenda dolorum, eligendi, facilis harum labore natus officia quasi repellendus soluta tenetur ullam, vero.</span><span>Accusamus commodi cupiditate earum et harum, id illo incidunt iusto, labore laboriosam nihil nulla omnis placeat quae quibusdam quis quo quod ratione repellat similique sit, soluta tempora veritatis vero voluptatem.</span><span>Alias aliquid asperiores assumenda beatae blanditiis commodi cumque distinctio dolorem ea eum expedita illum iure necessitatibus neque nesciunt nisi non perspiciatis possimus, quidem quisquam quo sit ut, vel, vitae voluptatum.</span><span>Architecto blanditiis expedita iusto laboriosam, laudantium omnis porro ratione velit. Ab aliquid, assumenda doloribus dolorum esse iure laboriosam magnam maxime minima, molestiae necessitatibus nobis odio possimus, praesentium qui quia soluta!
-        </span>
-    </p>-->
