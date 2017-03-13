@@ -1,13 +1,13 @@
 {% extends 'gis/base.html' %}
 
 {% block title %}
-    Home
+    {{ article.title }}
 {% endblock %}
 
 {% block content %}
     {% for article in articles %}
         <h3>{{ article.title }}</h3>
-        <p>{{ article.get_short_text | safe}}</p>
+        <p>{{ article.text}}</p>
     {% endfor %}
 {% endblock %}
     <!--<h1>Home</h1>
