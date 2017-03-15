@@ -4,34 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Map viewer</title>
-
   <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
   <script src="https://js.arcgis.com/4.3/"></script>
-
   <style>
     html,
     body,
-    #viewDiv {
-       padding: 0;
-       margin-top: 20px;
-       margin-left: 10px;
-       height: 95%;
-       width: 90%;
-       border-radius: 5px;
-    }
-    #back {
-        padding: 5px;
-        background-color: burlywood;
-        border-radius: 5px;
-        width: 100px;
-        top: 0;
-        text-align: center;
-        font-family: Arial;
-    }
-    a {text-decoration: none;  color: darkred;}
+    #viewDiv { margin: 0 0 0 5px;  padding: 0;  background-color: #2B3E50; height: 95%;  width: 90%;  border-radius: 5px;}
+    #back {padding: 10px; text-align: center;  font-family: Arial;border-radius: 2px;background-color: #DF691A; width: 150px;  margin-bottom: 15px;}
+    a {text-decoration: none;  color: #EBEBEB;}
 
   </style>
-
  <script>
     require([
         "esri/Map",
@@ -69,7 +51,7 @@
   </script>
 </head>
 <body>
-<div id="back"><a href="{% url 'home' %}">GO BACK</a></div>
-    <div id="viewDiv"></div>
+<div id="back"><a href="{% url 'home' %}">Go back</a></div>
+<div id="viewDiv"></div>
 </body>
 </html>
