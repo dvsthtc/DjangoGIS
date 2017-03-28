@@ -1,2 +1,2 @@
-#Learning Django
+# Learning Django
 Temp University Project
