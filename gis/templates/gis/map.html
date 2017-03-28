@@ -4,20 +4,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
     <title>Map</title>
-
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/fileupload.css">
     <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
-<style>
-     html, body {padding: 0;  background-color: #2B3E50;}
-     #map { margin-left: 5px;  position: absolute; height: 550px;  width: 850px;  border-radius: 5px; }
-     #HomeButton {  position: absolute; left:19px; top: 89px; z-index: 50; background-color: white; border-radius: 6px;}
-     #back {padding: 10px; text-align: center;  font-family: 'Arial',Georgia, Serif; border-radius: 2px; background-color: #DF691A; width: 150px;  margin-bottom: 15px;}
-     a {text-decoration: none;  color: #EBEBEB;}
-     #BasemapToggle { position: absolute; left: 763px; top: 10px;  z-index: 50; }
-     #mainWindow {right: 50px; position: absolute; background-color: darkgrey; color: black;  width: 400px; height: 140px; border-radius: 5px;}
-</style>
+     <style>
+         html, body {padding: 0;  background-color: #2B3E50;}
+         #map { margin-left: 5px;  position: absolute; height: 550px;  width: 850px;  border-radius: 5px; }
+         #HomeButton {  position: absolute; left:19px; top: 89px; z-index: 50; background-color: white; border-radius: 6px;}
+         #back {padding: 10px; text-align: center;  font-family: 'Arial',Georgia, Serif; border-radius: 2px; background-color: #DF691A; width: 150px;  margin-bottom: 15px;}
+         a {text-decoration: none;  color: #EBEBEB;}
+         #BasemapToggle { position: absolute; left: 763px; top: 10px;  z-index: 50; }
+         #mainWindow {right: 50px; position: absolute; background-color: darkgrey; color: black;  width: 400px; height: 140px; border-radius: 5px;}
+     </style>
     <script src="https://js.arcgis.com/3.20/"></script>
     <script>
      (function() {
@@ -138,19 +135,13 @@
           }
 
           function addShapefileToMap (featureCollection) {
-            //add the shapefile to the map and zoom to the feature collection extent
-            //If you want to persist the feature collection when you reload browser you could store the collection in
-            //local storage by serializing the layer using featureLayer.toJson()  see the 'Feature Collection in Local Storage' sample
-            //for an example of how to work with local storage.
             var fullExtent;
             var layers = [];
-
             arrayUtils.forEach(featureCollection.layers, function (layer) {
               var infoTemplate = new InfoTemplate("Details", "${*}");
               var featureLayer = new FeatureLayer(layer, {
                 infoTemplate: infoTemplate
               });
-              //associate the feature with the popup on click to enable highlight and zoom to
               featureLayer.on('click', function (event) {
                 map.infoWindow.setFeatures([event.graphic]);
               });
@@ -165,7 +156,6 @@
 
             dom.byId('upload-status').innerHTML = "";
           }
-
           function changeRenderer (layer) {
             //change the default symbol for the feature collection for polygons and points
             var symbol = null;
@@ -200,24 +190,19 @@
     <div id="back"><a href="{% url 'home' %}">Go back</a></div>
     <div id="map">
         <div id="BasemapToggle"></div>
-        <div id="HomeButton"></div>
-    </div>
+        <div id="HomeButton"></div></div>
      <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false">
           <div data-dojo-type="dijit/layout/ContentPane" id="rightPane" data-dojo-props="region:'right'">
-            <div >
-              <p>Add a zipped shapefile to the map.</p>
+            <div><p>Add a zipped shapefile to the map.</p>
                   <form enctype="multipart/form-data" method="post" id="uploadForm">
                   <div class="field">
                       <label class="file-upload">
                           <span><strong>Add File</strong></span>
                           <input type="file" name="file" id="inFile" />
-                      </label>
-                  </div>
+                      </label></div>
                   </form>
                   <span class="file-upload-status"  id="upload-status"></span>
-                  <div id="fileInfo">&nbsp;</div>
-            </div>
-        </div>
+                  <div id="fileInfo">&nbsp;</div></div></div>
         <div id="mapCanvas" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
       </div>
 </body>
